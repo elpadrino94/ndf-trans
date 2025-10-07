@@ -1,0 +1,166 @@
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ body {
+     font-family: 'Poppins', sans-serif;
+ }
+
+ /* ========= NAVBAR CSS ============= */
+ .navbar {
+     /* height: 70px; */
+     background-color: #0d6efd;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+
+ .navbar-brand {
+     font-size: 1.2rem;
+     font-weight: bold;
+ }
+
+ .navbar .navbar-nav .nav-item .nav-link {
+     font-size: 1.2rem;
+     font-weight: bold;
+     transition: transform 0.3s ease;
+ }
+
+ .navbar .navbar-nav .nav-item .nav-link:hover {
+     color: #59df00;
+     transform: scale(1.05);
+     border-bottom: 3px solid #fff;
+
+ }
+
+
+ /* Uniformiser la taille des images dans les cards */
+ .service-card img {
+     height: 200px;
+     object-fit: cover;
+ }
+
+ .container h2 {
+     font-weight: bold;
+     font-family: 'Montserrat';
+ }
+
+ .col-md-4 .card {
+     transition: transform 0.3s ease;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+ }
+
+ .col-md-4 .card:hover {
+     border: 3px solid #0d6efd;
+     transform: scale(1.05);
+ }
+
+ .testimonial {
+     background: #f8f9fa;
+     padding: 2rem;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+     margin-bottom: 1.5rem;
+ }
+
+ /* Section header (hero) */
+ .hero {
+     background: url('../images/bannière 1.jpg') no-repeat center center;
+     background-size: cover;
+     color: white;
+     height: 50vh;
+     display: flex;
+     align-items: center;
+     text-align: center;
+     position: relative;
+ }
+
+ .hero::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.5);
+     /* overlay sombre */
+ }
+
+ .hero-content {
+     position: relative;
+     z-index: 1;
+     width: 100%;
+ }
+
+ /* ======= CONTACT CSS ======== */
+ .contact-section {
+     padding: 60px 0;
+ }
+
+ .contact-info i {
+     font-size: 1.5rem;
+     color: #0d6efd;
+     margin-right: 10px;
+ }
+
+ .map-container {
+     height: 300px;
+     overflow: hidden;
+     border-radius: 10px;
+ }
+
+ /* =========== ABOUT =========== */
+ .about-section {
+     padding: 60px 0;
+ }
+
+ .about-section img {
+     border-radius: 10px;
+     object-fit: cover;
+     width: 100%;
+     height: 350px;
+ }
+
+ .icon-box {
+     text-align: center;
+     padding: 20px;
+     border-radius: 10px;
+     background: #f8f9fa;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+     margin-bottom: 20px;
+ }
+
+ .icon-box i {
+     font-size: 2rem;
+     color: #0d6efd;
+     margin-bottom: 10px;
+ }
+
+ .about-section .col-md-6 p {
+     text-align: justify;
+ }
+
+ /* ============ FOOTER =========== */
+
+ footer {
+     background-color: #0d6efd;
+     font-family: 'Montserrat';
+     font-weight: bold;
+     color: #FFFF;
+ }
+
+ footer .bi {
+     font-size: 1.8rem;
+     transition: transform 0.3s ease;
+ }
+
+ footer .bi-whatsapp {
+     color: #59df00;
+     font-weight: bold;
+ }
+
+ footer .bi-facebook {
+     font-weight: bold;
+     color: #0000ff;
+ }
+
+ footer .bi-envelope {
+     font-weight: bold;
+     color: #fefeff;
+ }

@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Transit</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'assets/logistique.ico' %}" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">NDF-Trans</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'avis' %}">Avis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- Section Avis Clients -->
+    <section id="avis" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Avis Clients</h2>
+            <div class="row">
+
+                {% for avis in avis_list %}
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <p>{{avis.message}}</p>
+                        <h6>- {{avis.name}}</h6>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center">Aucun avis pour le moment.</p>
+                {% endfor %}
+                <!-- <div class="col-md-4">
+                    <div class="testimonial">
+                        <p>"Mon conteneur est arrivé sans problème, merci à toute l’équipe."</p>
+                        <h6>- Amina T.</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <p>"Très professionnel, toujours disponible pour répondre à mes questions."</p>
+                        <h6>- Yao D.</h6>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class=" text-light py-4">
+        <div class="container text-center">
+            <p>© 2025 NDF-Trans - Tous droits réservés</p>
+            <div>
+                <a href="https://www.facebook.com/celestin.djato" target="_blank" class="text-light me-3"><i
+                        class="bi bi-facebook"></i></a>
+                <a href="https://wa.me/message/6M733SIAUQC3B1" target="_blank" class="text-light me-3"><i
+                        class="bi bi-whatsapp"></i></a>
+                <!-- <a href="#" class="text-light me-3"><i class="bi bi-linkedin"></i></a> -->
+                <a href="#" class="text-light"><i class="bi bi-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Section Header (Hero) -->
+<header class="hero">
+    <div class="container hero-content">
+        <h1 class="display-4 fw-bold">Votre partenaire de confiance pour le transit et la logistique</h1>
+        <p class="lead">Rapidité, efficacité et professionnalisme à votre service.</p>
+        <a href="{% url 'contact' %}" class="btn btn-primary btn-lg mt-3">Nous Contacter</a>
+    </div>
+</header>
+
+<!-- Section Services -->
+<section id="services" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Nos Services</h2>
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <img src="{{service.image.url}}" class="card-img-top" alt="Service 1">
+                    <div class="card-body">
+                        <h5 class="card-title">{{service.title}}</h5>
+                        <p class="card-text">{{service.description | truncatechars:200}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
